@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ ADL2-core
+  ~ Copyright (c) 2013-2014 Marand d.o.o. (www.marand.com)
+  ~
+  ~ This file is part of ADL2-core.
+  ~
+  ~ ADL2-core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as
+  ~ published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<jxb:bindings xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+              version="1.0">
+    <jxb:globalBindings underscoreBinding="asWordSeparator">
+        <xjc:serializable uid="0"/>
+        <xjc:superClass name="org.opencimi.rm.RmObject"/>
+    </jxb:globalBindings>
+
+    <jxb:bindings schemaLocation="../../xsd/rm/CIMI_RM3.0.4.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='DATA_VALUE']">
+            <jxb:class name="DataValue" implClass="DataValue"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='YESNO']">
+            <jxb:class name="YesNo" implClass="YesNo"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IDENTIFIER']">
+            <jxb:class name="Identifier" implClass="Identifier"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='URI_VALUE']">
+            <jxb:class name="UriValue" implClass="UriValue"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='EHR_URI']">
+            <jxb:class name="EhrUri" implClass="EhrUri"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ENCAPSULATED']">
+            <jxb:class name="Encapsulated" implClass="Encapsulated"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='MULTIMEDIA']">
+            <jxb:class name="Multimedia" implClass="Multimedia"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='PARSABLE']">
+            <jxb:class name="Parsable" implClass="Parsable"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ORDERED_VALUE']">
+            <jxb:class name="OrderedValue" implClass="OrderedValue"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ORDINAL']">
+            <jxb:class name="Ordinal" implClass="Ordinal"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='INTERVAL_VALUE']">
+            <jxb:class name="InternalValue" implClass="InternalValue"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='QUANTIFIED']">
+            <jxb:class name="Quantified" implClass="Quantified"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='AMOUNT']">
+            <jxb:class name="Amount" implClass="Amount"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='COUNT']">
+            <jxb:class name="Count" implClass="Count"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='QUANTITY']">
+            <jxb:class name="Quantity" implClass="Quantity"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='DURATION']">
+            <jxb:class name="Duration" implClass="Duration"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='PROPORTION']">
+            <jxb:class name="Proportion" implClass="Proportion"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='DATE_TIME']">
+            <jxb:class name="DateTime" implClass="DateTime"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='TIME']">
+            <jxb:class name="Time" implClass="Time"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='DATE']">
+            <jxb:class name="Date" implClass="Date"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='Interval']">
+            <jxb:class name="Interval" implClass="Interval"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfInteger']">
+            <jxb:class name="IntervalOfInteger" implClass="IntervalOfInteger"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='MultiplicityInterval']">
+            <jxb:class name="MultiplicityInterval" implClass="MultiplicityInterval"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfReal']">
+            <jxb:class name="IntervalOfReal" implClass="IntervalOfReal"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfDate']">
+            <jxb:class name="IntervalOfDate" implClass="IntervalOfDate"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfDateTime']">
+            <jxb:class name="IntervalOfDateTime" implClass="IntervalOfDateTime"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfTime']">
+            <jxb:class name="IntervalOfTime" implClass="IntervalOfTime"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='IntervalOfDuration']">
+            <jxb:class name="IntervalOfDuration" implClass="IntervalOfDuration"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='TEXT']">
+            <jxb:class name="Text" implClass="Text"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='PLAIN_TEXT']">
+            <jxb:class name="PlainText" implClass="PlainText"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='CODED_TEXT']">
+            <jxb:class name="CodedText" implClass="CodedText"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='TERM_MAPPING']">
+            <jxb:class name="TermMapping" implClass="TermMapping"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='LINK']">
+            <jxb:class name="Link" implClass="Link"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='LOCATABLE']">
+            <jxb:class name="Locatable" implClass="Locatable"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ARCHETYPED']">
+            <jxb:class name="Archetyped" implClass="Archetyped"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ITEM']">
+            <jxb:class name="Item" implClass="Item"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ITEM_GROUP']">
+            <jxb:class name="ItemGroup" implClass="ItemGroup"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ELEMENT']">
+            <jxb:class name="Element" implClass="Element"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='PARTY_RELATIONSHIP']">
+            <jxb:class name="PartyRelationship" implClass="PartyRelationship"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='PARTY']">
+            <jxb:class name="Party" implClass="Party"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ROLE']">
+            <jxb:class name="Role" implClass="Role"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ACTOR']">
+            <jxb:class name="Actor" implClass="Actor"/>
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>

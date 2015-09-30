@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>adl2-core</artifactId>
+        <groupId>org.openehr.adl2-core</groupId>
+        <version>1.0.2-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.openehr.adl2-core</groupId>
+    <artifactId>CIMIRM</artifactId>
+    <packaging>jar</packaging>
+    <!-- Project Information Change it later to match what we need -->
+    <name>CIMIRM</name>
+    <description>The CIMI RM project creates CIMI Reference Model implementation for its version 3.0.4.</description>
+    <url>http://informatics.mayo.edu</url>
+    <inceptionYear>2015</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <organization>
+        <name>Mayo Clinic</name>
+        <url>http://mayo.edu</url>
+    </organization>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>cimirm</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <extension>true</extension>
+                            <args>
+                                <arg>-Xinheritance</arg>
+                            </args>
+                            <bindingDirectory>src/main/resources/org/opencimi/xjb/rm</bindingDirectory>
+                            <bindingIncludes>
+                                <bindingInclude>cimi-rm-bindings.xjb</bindingInclude>
+                            </bindingIncludes>
+                            <schemaIncludes>
+                                <schemaInclude>*.xsd</schemaInclude>
+                            </schemaIncludes>
+                            <schemaDirectory>src/main/resources/org/opencimi/xsd/rm</schemaDirectory>
+                            <generatePackage>org.opencimi.jaxb.rm</generatePackage>
+                            <forceRegenerate>true</forceRegenerate>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-basics</artifactId>
+                        <version>0.5.3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+    </dependencies>
+</project>
