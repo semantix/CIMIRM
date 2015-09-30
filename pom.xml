@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.openehr.adl2-core</groupId>
     <artifactId>CIMIRM</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <!-- Project Information Change it later to match what we need -->
     <name>CIMIRM</name>
