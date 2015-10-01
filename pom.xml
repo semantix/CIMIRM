@@ -1,34 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+
+<!--
+  ~ ADL2-core
+  ~ Copyright (c) 2013-2014 Marand d.o.o. (www.marand.com)
+  ~
+  ~ This file is part of ADL2-core.
+  ~
+  ~ ADL2-core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as
+  ~ published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses />.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.openehr.adl2-core</groupId>
         <artifactId>adl2-core</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.2.2-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.mayo.samepage</groupId>
-    <artifactId>CIMIRM</artifactId>
-    <version>1.0.1</version>
+    <artifactId>model-rm-opencimi</artifactId>
     <packaging>jar</packaging>
-    <!-- Project Information Change it later to match what we need -->
-    <name>CIMIRM</name>
-    <description>The CIMI RM project creates CIMI Reference Model implementation for its version 3.0.4.</description>
-    <url>http://informatics.mayo.edu</url>
-    <inceptionYear>2015</inceptionYear>
+    <name>${project.artifactId}</name>
     <licenses>
         <license>
-            <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
+            <name>GNU AFFERO GENERAL PUBLIC LICENSE</name>
+            <url>http://www.gnu.org/licenses/agpl-3.0.html</url>
         </license>
     </licenses>
-    <organization>
-        <name>Mayo Clinic</name>
-        <url>http://mayo.edu</url>
-    </organization>
     <build>
         <plugins>
             <plugin>
@@ -36,7 +43,7 @@
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>cimirm</id>
+                        <id>rm</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -47,7 +54,7 @@
                             </args>
                             <bindingDirectory>src/main/resources/org/opencimi/xjb/rm</bindingDirectory>
                             <bindingIncludes>
-                                <bindingInclude>cimi-rm-bindings.xjb</bindingInclude>
+                                <bindingInclude>opencimi-rm-bindings.xjb</bindingInclude>
                             </bindingIncludes>
                             <schemaIncludes>
                                 <schemaInclude>*.xsd</schemaInclude>
@@ -70,8 +77,39 @@
     </build>
     <dependencies>
         <dependency>
+            <groupId>org.openehr.adl2-core</groupId>
+            <artifactId>model-rm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr.adl2-core</groupId>
+            <artifactId>model-rm-openehr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+        <!-- Apache commons -->
+        <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
         </dependency>
+
+
     </dependencies>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <excludePackageNames>org.openehr.jaxb</excludePackageNames>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
