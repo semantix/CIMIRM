@@ -13,5 +13,8 @@ in the parent project.
 This project (CIMIRM) generates classes which augment adl2-core project with 
 CIMI Reference model.
 
+This project is dependent on OpenEHR adl2-core libraries at:
+https://repo1.maven.org/maven2/org/openehr/adl2-core/
+
 This project can be included in your Maven project using jitpack.io .
 
