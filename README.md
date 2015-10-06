@@ -16,5 +16,19 @@ CIMI Reference model.
 This project is dependent on OpenEHR adl2-core libraries at:
 https://repo1.maven.org/maven2/org/openehr/adl2-core/
 
-This project can be included in your Maven project using jitpack.io .
+It uses "adl2-core", "model-rm" and "model-rm-openehr" modules.
+
+This project can be included in your Maven project using jitpack.io or using Mayo Clinic's Maven Repository
+<repository>
+            <id>edu.informatics.maven.thirdparty</id>
+            <name>Informatics Maven ThirdParty Repository</name>
+            <url>http://informatics.mayo.edu/maven/content/repositories/thirdparty</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
 
