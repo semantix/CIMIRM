@@ -1,4 +1,3 @@
-# CIMIRM (model-rm-opencimi)
 An implementation of miniCIMI Reference Model
 =============================================
 This project creates Java classes from miniCIMI Reference Model.
