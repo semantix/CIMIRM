@@ -18,8 +18,18 @@ https://repo1.maven.org/maven2/org/openehr/adl2-core/
 
 It uses "adl2-core", "model-rm" and "model-rm-openehr" modules.
 
+```
+Dependency Information:
+
+       <dependency>
+            <groupId>org.openEHR.adl2core</groupId>
+            <artifactId>model-rm-opencimi</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+```
 This project can be included in your Maven project using jitpack.io or using Mayo Clinic's Maven Repository
-<repository>
+```
+      <repository>
             <id>edu.informatics.maven.thirdparty</id>
             <name>Informatics Maven ThirdParty Repository</name>
             <url>http://informatics.mayo.edu/maven/content/repositories/thirdparty</url>
@@ -30,5 +40,5 @@ This project can be included in your Maven project using jitpack.io or using May
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-
+```
 
